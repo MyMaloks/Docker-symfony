@@ -3,7 +3,7 @@ WORKDIR /var/www/html/symfonyapp
 COPY . .
 
 RUN apt-get update -qy && \
-    apt-get install -qq --no-install-recommends wget apt-transport-https lsb-release ca-certificates yamllint rsync npm && \			
+    apt-get install -qq --no-install-recommends wget apt-transport-https lsb-release ca-certificates yamllint rsync npm git ssh && \			
 	apt-get install -qq --no-install-recommends libwebp-dev libjpeg62-turbo-dev libpng-dev libxpm-dev libfreetype6-dev && \
 	docker-php-ext-configure gd --with-gd --with-webp-dir --with-jpeg-dir --with-png-dir --with-zlib-dir --with-xpm-dir --with-freetype-dir && \
 	docker-php-ext-install zip gd && \
